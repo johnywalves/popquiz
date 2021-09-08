@@ -1,5 +1,8 @@
-import Main from 'components/Main'
+import Home from 'components/Home'
+import IDatabase from 'types/database'
 
-export default function Home() {
-  return <Main />
+import db from '../../db.json'
+
+export default function Index() {
+  return <Home db={(db as unknown) as IDatabase} />
 }

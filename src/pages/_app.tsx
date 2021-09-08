@@ -1,6 +1,11 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { ThemeProvider } from 'styled-components'
 import GlobalStyles from 'styles/global'
+
+import db from '../../db.json'
+
+const theme = db.theme
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -15,8 +20,10 @@ function App({ Component, pageProps }: AppProps) {
           content="Quiz sobre música popular atráves dos anos"
         />
       </Head>
-      <GlobalStyles />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }

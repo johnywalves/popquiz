@@ -12,11 +12,18 @@ const GlobalStyles = createGlobalStyle`
     }
 
     html, body, #__next {
-        height: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
 
     body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: ${({ theme }) => theme.colors.contrastText};
+    }
+
+    #__next {
+        flex: 1;
     }
 `
 
